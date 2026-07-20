@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --border: #e4e7ec;
+  --text: #171b21;
+  --text-muted: #667085;
+  --accent: #3e63dd;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
