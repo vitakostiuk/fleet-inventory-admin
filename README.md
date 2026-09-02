@@ -18,6 +18,17 @@ format.
    location.
 3. **Collapsible groups with live counts.** Each client section can be
    collapsed independently while still reflecting the current filter set.
+   
+## AI Agent — "Ask the Fleet"
+
+A natural-language query interface backed by the Claude API. Users ask
+questions like "How many Equinox devices are offline?" and the model
+autonomously calls one or more tools (`filter_devices`, `get_status_summary`,
+`get_locations_for_client`) via a full agentic loop — the UI surfaces which
+tools were called and with what arguments, not just the final answer.
+
+Requires a Claude API key set as `ANTHROPIC_API_KEY` in your Vercel
+environment variables.
 
 ## Stack
 
