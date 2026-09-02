@@ -66,5 +66,5 @@ export function useInventoryFilters() {
     }));
   }, [filteredRows]);
 
-  return { filters, setFilters, clients, filteredRows, grouped, totalCount: allRows.length };
+  return { filters, setFilters, clients, filteredRows, grouped, totalCount: allRows.length, allRows };
 }

@@ -1,9 +1,10 @@
 import { useInventoryFilters } from './hooks/useInventoryFilters';
 import FilterBar from './components/FilterBar';
 import GroupedInventory from './components/GroupedInventory';
+import AskFleet from './components/AskFleet';
 
 export default function App() {
-  const { filters, setFilters, clients, grouped, filteredRows, totalCount } = useInventoryFilters();
+  const { filters, setFilters, clients, grouped, filteredRows, totalCount, allRows } = useInventoryFilters();
 
   return (
     <div className="min-h-screen bg-[var(--bg)] pb-24">
@@ -22,13 +23,16 @@ export default function App() {
       </header>
 
       <main className="mx-auto mt-10 max-w-5xl px-6">
-        <FilterBar
-          filters={filters}
-          setFilters={setFilters}
-          clients={clients}
-          resultCount={filteredRows.length}
-          totalCount={totalCount}
-        />
+        <AskFleet devices={allRows} />
+        <div className="mt-6">
+          <FilterBar
+            filters={filters}
+            setFilters={setFilters}
+            clients={clients}
+            resultCount={filteredRows.length}
+            totalCount={totalCount}
+          />
+        </div>
         <div className="mt-6">
           <GroupedInventory groups={grouped} />
         </div>
